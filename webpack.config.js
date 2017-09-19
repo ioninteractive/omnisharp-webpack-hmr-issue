@@ -17,7 +17,7 @@ const title = 'Aurelia Navigation Skeleton';
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
-const baseUrl = '/';
+const baseUrl = '/dist/';
 
 const cssRules = [
   { loader: 'css-loader' },
@@ -106,7 +106,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       template: 'index.ejs',
       metadata: {
         // available in index.ejs //
-        title, server, baseUrl
+        title, server//, baseUrl
       }
     }),
     ...when(extractCss, new ExtractTextPlugin({
